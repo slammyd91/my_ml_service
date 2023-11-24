@@ -27,6 +27,7 @@ class MLTests(TestCase):
         self.assertEqual('OK', response['status'])
         self.assertTrue('label' in response)
         self.assertEqual('<=50K', response['label'])
+
     def test_registry(self):
         registry = MLRegistry()
         self.assertEqual(len(registry.endpoints), 0)
@@ -44,3 +45,4 @@ class MLTests(TestCase):
                     algorithm_description, algorithm_code)
         # there should be one endpoint available
         self.assertEqual(len(registry.endpoints), 1)
+
